@@ -1,11 +1,11 @@
 var inputStore = JSON.parse(localStorage.getItem("inputStore")) || [];
 
 function displayWeatherInfo(){   
- // This is our API key
+ 
  var city = $(this).attr("data-name")
 
- // Here we are building the URL we need to query the database
- var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+ // Here we are fetching data for current API
+ var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
    "q=" + city + "&units=imperial&appid=166a433c57516f51dfab1f7edaed8413"
 
    $.ajax({
@@ -13,36 +13,42 @@ function displayWeatherInfo(){
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    $(".icon").html("<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
+    var iconId = response.weather[i].icon;
+    $("#icon").html("<img class='currIcon' src='https://openweathermap.org/img/wn/" + iconId + "@2x.png'>").attr('SameSite=None');
+    // $("#icon").html("<img class='currIcon' src='https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png'>").attr('SameSite=None');
     // $("<img src='http://openweathermap.org/img/wn/" + attr.weather[0].icon + ".png'>")
+    
     $(".location").html("<h1>" + response.name + "</h1>")
     $(".temperature").html("<p> Temperature: " +  response.main.temp + " °F</p>")
     $(".humidity").html("<p> Humidity: " + response.main.humidity + " %</p>")
     $(".wind-speed").html("<p> wind-speed: " + response.wind.speed + " MPH</p>")
+    
+    // $.ajax({
+    //     url: "https://api.openweathermap.org/data/2.5/uvi/history?" +
+    //     "&lat=" + lat +"$lon=" + lon + "&appid=166a433c57516f51dfab1f7edaed8413" ,
+    //     method: "GET"
+    //   }).then(function(response) {
+    //     console.log(response)
+    //     $(".uv-index").html()
+    // }); 
+
+    lat = toString(response.coord.lat);
+    lon = toString(response.coord.lon);
+    });
+    
+    // here is my attempt for grabbing the UV Index
+    var uviURL = "https://api.openweathermap.org/data/2.5/uvi/history?" +
+    "&lat=" + lat +"$lon=" + lon + "&appid=166a433c57516f51dfab1f7edaed8413"
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/uvi/history?" +
-        "&lat=" + lat +"$lon=" + lon + "&appid=166a433c57516f51dfab1f7edaed8413" ,
+        url: uviURL,
         method: "GET"
       }).then(function(response) {
         console.log(response)
-        $(".uv-index").html()
-
-    }); 
-    var lat = lat === (response.coord.lat);
-    var lon = lon === (response.coord.lon);
-    });
-    
-    var city = $(this).attr("data-name")
-    // var forecastURL = "https://api.openweathermap.org/data/2.5/uvi/history?" +
-    // "&lat=" + lat +"$lon=" + lon + "&appid=166a433c57516f51dfab1f7edaed8413"
-    $.ajax({
-        url: forecastURL,
-        method: "GET"
-      }).then(function(response) {
-        $(".uv-index").html("<p> UV index: " + response.name + "</p>")
+        $(".uv-index").html("<p> UV index: " +  + "</p>")
 
     });
     
+    // forecast data API
     var city = $(this).attr("data-name")
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?" +
     "q=" + city + "&units=imperial&appid=166a433c57516f51dfab1f7edaed8413"
@@ -113,5 +119,6 @@ renderInput();
 });
 
 $(document).on("click", ".city", displayWeatherInfo);
+document.cookie = 'cross-site-cookie=bar; SameSite=None';
 renderInput();
 // pull display  of API info on the screen out of this funciton to store in local storage (maybe declare this in the global variable? ) 
