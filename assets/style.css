@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+#forecast1 {
+  height: 15em;
+  background: rgb(36, 106, 255);
+  border-radius: 10px;
+  float: left;
+  margin-left: 3%;
+}
+
+#forecast2 {
+  height: 15em;
+  background: rgb(36, 106, 255);
+  border-radius: 10px;
+  float: left;
+  margin-left: 3%;
+}
+#forecast3 {
+  height: 15em;
+  background: rgb(36, 106, 255);
+  border-radius: 10px;
+  float: left;
+  margin-left: 3%;
+}
+#forecast4 {
+  height: 15em;
+  background: rgb(36, 106, 255);
+  border-radius: 10px;
+  float: left;
+  margin-left: 3%;
+}
+
+#forecast5 {
+  height: 15em;
+  background: rgb(36, 106, 255);
+  border-radius: 10px;
+  float: left;
+  margin-left: 3%;
+}
+
+
+
+.inputStyle {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: dashed grey;
+  text-align: center;
+  font: 40px;
+}

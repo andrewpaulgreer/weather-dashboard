@@ -1,1 +1,2 @@
 # weather-dashboard
+this project was extremely fun, and is probably my proudest work yet. I did have an immense amount of trouble getting my icon to show up, but after having max look at it, it turns out that I was using ' quote marks instead of using a / backtick for the tmeplate literals in the icon URL's, other than that, i feel as if my logic behind what i was doing for this project was mostly right in pulling the data from the API's and getting it to display in my UI.
