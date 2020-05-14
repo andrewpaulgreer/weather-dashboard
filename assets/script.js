@@ -87,40 +87,40 @@ function displayWeatherInfo() {
       "<p> Humidity: " + response.list[4].main.humidity + " %</p>"
     );
 
-    $(".date2").html("<h5>" + response.list[4].dt_txt + "</h5>");
+    $(".date2").html("<h5>" + response.list[12].dt_txt + "</h5>");
     $(".icon2").html(
-      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[4].weather[0].icon}.png">`
+      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[12].weather[0].icon}.png">`
     );
-    $(".temp2").html("<p> Temp: " + response.list[4].main.temp + " °F</p>");
+    $(".temp2").html("<p> Temp: " + response.list[12].main.temp + " °F</p>");
     $(".humid2").html(
-      "<p> Humidity: " + response.list[4].main.humidity + " %</p>"
+      "<p> Humidity: " + response.list[12].main.humidity + " %</p>"
     );
 
-    $(".date3").html("<h5>" + response.list[4].dt_txt + "</h5>");
+    $(".date3").html("<h5>" + response.list[20].dt_txt + "</h5>");
     $(".icon3").html(
-      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[4].weather[0].icon}.png">`
+      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[20].weather[0].icon}.png">`
     );
-    $(".temp3").html("<p> Temp: " + response.list[4].main.temp + " °F</p>");
+    $(".temp3").html("<p> Temp: " + response.list[20].main.temp + " °F</p>");
     $(".humid3").html(
-      "<p> Humidity: " + response.list[4].main.humidity + " %</p>"
+      "<p> Humidity: " + response.list[20].main.humidity + " %</p>"
     );
 
-    $(".date4").html("<h5>" + response.list[4].dt_txt + "</h5>");
+    $(".date4").html("<h5>" + response.list[28].dt_txt + "</h5>");
     $(".icon4").html(
-      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[4].weather[0].icon}.png">`
+      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[28].weather[0].icon}.png">`
     );
-    $(".temp4").html("<p> Temp: " + response.list[4].main.temp + " °F</p>");
+    $(".temp4").html("<p> Temp: " + response.list[28].main.temp + " °F</p>");
     $(".humid4").html(
-      "<p> Humidity: " + response.list[4].main.humidity + " %</p>"
+      "<p> Humidity: " + response.list[28].main.humidity + " %</p>"
     );
 
-    $(".date5").html("<h5>" + response.list[4].dt_txt + "</h5>");
+    $(".date5").html("<h5>" + response.list[36].dt_txt + "</h5>");
     $(".icon5").html(
-      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[4].weather[0].icon}.png">`
+      `<img class='currIcon' src="https://openweathermap.org/img/wn/${response.list[36].weather[0].icon}.png">`
     );
-    $(".temp5").html("<p> Temp: " + response.list[4].main.temp + " °F</p>");
+    $(".temp5").html("<p> Temp: " + response.list[36].main.temp + " °F</p>");
     $(".humid5").html(
-      "<p> Humidity: " + response.list[4].main.humidity + " %</p>"
+      "<p> Humidity: " + response.list[36].main.humidity + " %</p>"
     );
   });
 }
